@@ -20,7 +20,7 @@ include $partialsPath . 'header.php';
 
     <!-- Bloc infos -->
     <div class="profile-overlay">
-      <h2>Qui suis-je ?</h2>
+      <h2>Elisa Pichon <br><br>Qui suis-je ?</h2>
       <div class="profile-infos">
         <div class="detail-box"><i data-lucide="map-pin"></i>Vannes</div>
         <div class="detail-box"><i data-lucide="graduation-cap"></i>MyDigitalSchool</div>
