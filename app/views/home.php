@@ -24,9 +24,9 @@ include $partialsPath . 'header.php';
       <div class="profile-infos">
         <div class="detail-box"><i data-lucide="map-pin"></i>Vannes</div>
         <div class="detail-box"><i data-lucide="graduation-cap"></i>MyDigitalSchool</div>
-        <div class="detail-box"><i data-lucide="calendar"></i>Âge : 23 ans</div>
-        <div class="detail-box"><i data-lucide="message-square"></i>LV1 : Français</div>
-        <div class="detail-box"><i data-lucide="message-square"></i>LV2 : Anglais</div>
+        <div class="detail-box"><i data-lucide="calendar"></i>Âge : 21 ans</div>
+        <div class="detail-box"><i data-lucide="message-square"></i>Anglais : TOEIC B2</div>
+        <div class="detail-box"><i data-lucide="message-square"></i>Espagnol</div>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ include $partialsPath . 'header.php';
     </div>
     <div class="stat-tile">
       <div class="stat-icon">✏️</div>
-      <div class="stat-number">56</div>
+      <div class="stat-number">42</div>
       <div class="stat-label">Crayons finis</div>
     </div>
   </div>
@@ -69,10 +69,11 @@ include $partialsPath . 'header.php';
       <?php
         $atouts = [
   ['Créative', 'sparkles'],
-  ['Rigoureuse', 'check-circle'],
+  ['Ponctuele', 'check-circle'],
   ['Curieuse', 'search'],
-  ['Positive', 'smile'],
-  ['Empathique', 'heart-handshake']
+  ['Autonome', 'smile'],
+  ['Empathique', 'heart-handshake'],
+  ['Polivalente', 'arrow-up-narrow-wide']
 ];
 
 foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
@@ -112,16 +113,13 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
        FORMATIONS À VENIR
   ============================= -->
   <section id="form-futur" class="form-futur">
-  <h2>Mes formations à venir</h2>
+  <h2>Ma formations à venir</h2>
 
   <div class="formation-wrapper">
     <div class="formation-timeline">
       <?php
         $futur = [
           ['Sept. 2025', 'UX/UI Design', 'Approfondir la création d’interfaces centrées utilisateur.'],
-          ['Oct. 2025', 'Dév. Front-End', 'Renforcer mes compétences HTML, CSS, JS et frameworks.'],
-          ['Nov. 2025', 'Gestion de Projet', 'Découvrir les méthodes agiles et la coordination d\'équipe.'],
-          ['Déc. 2025', 'SEO & Analytics', 'Optimiser la visibilité des projets et analyser leurs performances.']
         ];
 
         foreach ($futur as [$mois, $titre, $desc]) {
@@ -145,23 +143,23 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     <div class="timeline">
       <div class="timeline-item left">
         <div class="content">
-          <span class="date">2023</span>
+          <span class="date">2025</span>
           <h3><i class="icon-graduation-cap"></i> Bachelor Webmarketing</h3>
           <p>MyDigitalSchool – Vannes<br>Spécialisation en stratégie digitale, UX, SEO, branding.</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="content">
-          <span class="date">2021</span>
-          <h3><i class="icon-graduation-cap"></i> BTS Communication</h3>
-          <p>Lycée Dupuy-de-Lôme – Lorient<br>Communication globale, médias, événementiel.</p>
+          <span class="date">2024</span>
+          <h3><i class="icon-graduation-cap"></i> Licence MIS</h3>
+          <p>UBS Vannes<br>Licence Mathématiques, Informatique et Statistiques</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="content">
-          <span class="date">2019</span>
-          <h3><i class="icon-graduation-cap"></i> Bac STMG – Mercatique</h3>
-          <p>Lycée Notre-Dame – Quimperlé<br>Marketing, droit, économie, gestion.</p>
+          <span class="date">2022</span>
+          <h3><i class="icon-graduation-cap"></i> Bac général</h3>
+          <p>Lycée kerneuzec – Quimperlé<br>Numérique et Sciences de l’Informatique, Mathématiques et Physique-Chimie</p>
         </div>
       </div>
     </div>
