@@ -196,7 +196,7 @@
   <div class="en-savoir-container">
     <h2>Envie d’en savoir plus ?</h2>
     <p>Téléchargez mon rapport complet au format PDF pour découvrir tous les détails du projet.</p>
-    <a href="<?= BASE_URL ?>assets/doc/Projet_Passion_Foot_PORTFOLIO.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" download>
+    <a href="<?= BASE_URL ?>assets/doc/PICHON_Elisa_rapportEntreprise_B3WSM.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" download>
       Télécharger le PDF
     </a>
   </div>
