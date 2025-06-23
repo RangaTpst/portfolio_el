@@ -119,7 +119,9 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     <div class="formation-timeline">
       <?php
         $futur = [
-          ['Sept. 2025', 'UX/UI Design', 'Approfondir la création d’interfaces centrées utilisateur.'],
+          ['Sept. 2025', 'MBA WebMarketing', 'Contact école : Sherley BURBAN <br>    
+          06 27 87 02 68
+          sherley.burban@mydigitalschool.com'],
         ];
 
         foreach ($futur as [$mois, $titre, $desc]) {
