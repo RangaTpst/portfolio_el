@@ -26,5 +26,14 @@ class HomeController extends BaseController
 {
     $this->render('about.php');
 }
+public function competences()
+{
+    // Si tu as un modèle pour récupérer des données, tu peux le faire ici
+    // Par exemple, récupérer des compétences hard/soft en BDD si besoin
+
+    // Pour l’instant, on envoie juste à la vue sans données dynamiques
+    $this->render('competences.php');
+}
+
 }
 

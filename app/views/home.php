@@ -32,6 +32,30 @@ include $partialsPath . 'header.php';
   </div>
 </section>
 
+<!-- ============================
+     Stat décalé
+============================= -->
+
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat-tile">
+      <div class="stat-icon">🎧</div>
+      <div class="stat-number">1240</div>
+      <div class="stat-label">Heures d'écoute</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-icon">📁</div>
+      <div class="stat-number"><?= count($projects) ?></div>
+      <div class="stat-label">Projets réalisés</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-icon">✏️</div>
+      <div class="stat-number">56</div>
+      <div class="stat-label">Crayons finis</div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -65,30 +89,24 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
   <!-- ============================
        CENTRES D’INTÉRÊT
   ============================= -->
-  <section id="interet" class="interets-section">
-    <h2>Centres d’intérêt</h2>
-    <div class="interets-wrapper">
-      <div class="interets-carousel">
-        <?php
-          $interets = [
-            ['palette', 'Design Graphique', 'Je conçois des visuels modernes et harmonieux.'],
-            ['camera', 'Photographie', 'Capturer les instants du quotidien et les voyages.'],
-            ['globe', 'Voyages', 'Explorer de nouvelles cultures m’inspire chaque jour.'],
-            ['book-open', 'Lecture', 'Romans, essais marketing : toujours apprendre.'],
-            ['music', 'Musique', 'La bande-son qui stimule ma créativité.'],
-            ['pen-tool', 'Illustration', 'Dessin numérique pour donner vie à mes idées.']
-          ];
-          foreach ($interets as [$icon, $titre, $texte]) {
-            echo "<div class='interet-item'>
-                    <i data-lucide='{$icon}'></i>
-                    <h3>{$titre}</h3>
-                    <p>{$texte}</p>
-                  </div>";
-          }
-        ?>
-      </div>
+  <section class="interests-section">
+  <h2>Mes centres d’intérêt</h2>
+  <div class="interests-container">
+    <div class="interest-tile reading">
+      <span>Lecture</span>
     </div>
-  </section>
+    <div class="interest-tile box">
+      <span>Boxe</span>
+    </div>
+    <div class="interest-tile music">
+      <span>Musique</span>
+    </div>
+    <div class="interest-tile selfdefense">
+      <span>Self défense</span>
+    </div>
+  </div>
+</section>
+
 
   <!-- ============================
        FORMATIONS À VENIR

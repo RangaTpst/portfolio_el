@@ -1,5 +1,6 @@
 /* ====================  FOND  ==================== */
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
@@ -7,6 +8,22 @@ body {
   background-image: radial-gradient(ellipse at 3000px 3000px, rgb(138, 21, 21) 50%, transparent 0);
   background-repeat: no-repeat;
   background-size: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Wrapper global englobant header + main + footer */
+.site-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Le contenu principal prend tout l’espace possible */
+main, #main-content {
+  flex: 1 0 auto;
 }
 
 /* ====================  HERO  ==================== */
@@ -228,7 +245,6 @@ body {
   scroll-snap-type: x mandatory;
 }
 
-
 .carousel-slide h3 {
   margin-bottom: 0.5rem;
   font-size: 1.4rem;
@@ -297,7 +313,6 @@ body {
 .carousel-btn.prev { left: 0.5rem; }
 .carousel-btn.next { right: 0.5rem; }
 
-
 .carousel-slide img {
   max-width: 100%;
   max-height: 400px;
@@ -306,7 +321,6 @@ body {
   display: block;
   object-fit: contain;
 }
-
 
 .phase.orange h3 {
   color: #ff5722;
@@ -323,7 +337,6 @@ body {
 .phase.blue h3 {
   color: #2196f3;
 }
-
 
 .project-budget {
   text-align: center;
@@ -379,7 +392,6 @@ body {
   border: 2px solid #ab47bc;
 }
 
-
 /* Couleurs des titres de phase */
 h3.orange { color:#ff5722 }
 h3.cyan   { color:#00e5c1 }
@@ -397,7 +409,6 @@ h3.blue   { color:#2196f3 }
 .budget-block.yellow h3 { background:#f4b400 }
 .budget-block.green  h3 { background:#29c774; border:2px solid #a259ff } /* contour violet comme sur le screen */
 .budget-block.blue   h3 { background:#1e88e5 }
-
 
 .en-savoir-plus {
   padding: 4rem 2rem;
@@ -460,3 +471,22 @@ h3.blue   { color:#2196f3 }
   background-color: #f9f9f900;
 }
 
+/* ==================== FOOTER ==================== */
+footer {
+  flex-shrink: 0; /* empêche le footer de rétrécir */
+  background-color: #000000;
+  color: #949494;
+  font-size: 0.95rem;
+  padding: 2rem 1rem;
+  border-top: 1px solid #ddd;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Wrapper global */
+.site-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

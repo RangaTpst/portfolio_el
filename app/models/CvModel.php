@@ -41,8 +41,8 @@ class CvModel
             $mail->isSMTP();
             $mail->Host = 'ssl0.ovh.net';
             $mail->SMTPAuth = true;
-            $mail->Username = ''; // Ton adresse OVH
-            $mail->Password = ''; // Mot de passe Zimbra
+            $mail->Username = 'contact@elisa-pichon.fr'; // Ton adresse OVH
+            $mail->Password = '@Shynon09062004'; // Mot de passe Zimbra
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
             $mail->CharSet = 'UTF-8';

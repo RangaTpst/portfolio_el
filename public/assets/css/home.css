@@ -1,4 +1,4 @@
-/* ============================================
+/* ============================================ 
    IMPORT GOOGLE FONTS
 ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap');
@@ -9,7 +9,7 @@
 :root {
   --red: #b6162e;          /* Rouge carmin */
   --red-dark: #520f0f;
-  --black: #1f1f1f;           /* Noir charbon */
+  --black: #1f1f1f;        /* Noir charbon */
   --white: #f5f4f3;        /* Blanc ivoire */
   --gold: #d7b57b;         /* Accent doré pâle */
   --gray: #888;
@@ -20,6 +20,8 @@
 /* ============================================
    BASE
 ============================================ */
+
+
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--white);
@@ -29,7 +31,15 @@ body {
   overflow-x: hidden;
   width: 100%;
   background-image: radial-gradient(circle at 120% 120%, #520f0f 50%, transparent 0);
-  
+  min-height: 100vh; /* hauteur viewport */
+}
+
+#main-content, main {
+  flex: 1 0 auto; /* Prend tout l’espace vertical restant */
+}
+
+footer {
+  flex-shrink: 0; /* Ne rétrécit pas, reste en bas */
 }
 
 /* ============================================
@@ -38,6 +48,10 @@ body {
 .about-page {
   max-width: 100%;
   padding-bottom: 4rem;
+}
+
+#main-content {
+  flex: 1 0 auto; /* prend tout l'espace disponible */
 }
 
 /* ============================================
@@ -101,7 +115,7 @@ body {
 }
 
 /* ============================================
-   ATOUTS
+   ATOUTS (CARROUSEL)
 ============================================ */
 .atouts-section {
   margin-top: 5rem;
@@ -137,13 +151,13 @@ body {
   padding: 1rem;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
+  cursor: default;
 }
 
-/*.atout-item:hover {
-  transform: translate3d(0, -6px, 0); 
+.atout-item:hover {
+  transform: translateY(-6px);
 }
-*/
 
 .atout-item svg {
   width: 34px;
@@ -158,59 +172,112 @@ body {
 }
 
 /* ============================================
-   CENTRES D’INTÉRÊT
+   CENTRES D’INTÉRÊT (TUILES IMAGES)
 ============================================ */
-.interets-section {
-  margin-top: 5rem;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+.interests-section {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--white);
   text-align: center;
 }
 
-.interets-wrapper {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  cursor: grab;
+.interests-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
-.interets-wrapper.dragging {
-  cursor: grabbing;
-}
-
-.interets-carousel {
+.interests-container {
   display: flex;
-  gap: 2rem;
-  padding: 2rem 0;
-  width: max-content;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-
-.interet-item:hover {
-  transform: translateY(-6px);
-}
-
-.interet-item svg {
-  width: 36px;
-  height: 36px;
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-
-.interet-item h3 {
-  color: var(--gold);
-  font-size: 1.15rem;
-  margin-bottom: 0.4rem;
-}
-
-.interet-item p {
+.interest-tile {
+  position: relative;
+  width: 300px;        /* taille de l’image */
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
   color: var(--white);
-  font-size: 0.95rem;
+  overflow: hidden;
+  text-align: center;
+  padding: 0;
+  transition: background-image 0.4s ease, color 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interest-tile span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+/* Images par défaut */
+.interest-tile.reading {
+  background-image: url('../../assets/images/interests/read1.png');
+}
+
+.interest-tile.box {
+  background-image: url('../../assets/images/interests/box1.png');
+}
+
+.interest-tile.music {
+  background-image: url('../../assets/images/interests/music1.png');
+}
+
+.interest-tile.selfdefense {
+  background-image: url('../../assets/images/interests/self1.png');
+}
+
+/* Hover images */
+.interest-tile.reading:hover {
+  background-image: url('../../assets/images/interests/read2.png');
+}
+
+.interest-tile.box:hover {
+  background-image: url('../../assets/images/interests/box2.png');
+}
+
+.interest-tile.music:hover {
+  background-image: url('../../assets/images/interests/music2.png');
+}
+
+.interest-tile.selfdefense:hover {
+  background-image: url('../../assets/images/interests/self2.png');
+}
+
+/* Overlay sombre pour contraste */
+.interest-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.interest-tile:hover::before {
+  background: rgba(0,0,0,0.6);
+}
+
+.interest-tile:hover {
+  transform: scale(2);
+  z-index: 10;
 }
 
 /* ============================================
-   FORMATIONS
+   FORMATIONS (TIMELINE)
 ============================================ */
 .form-futur {
   margin-top: 6rem;
@@ -271,6 +338,7 @@ body {
   border-radius: 50%;
   background: var(--gold);
   box-shadow: var(--shadow);
+  z-index: 3;
 }
 
 .formation-step .mois {
@@ -294,7 +362,6 @@ body {
 /* ============================================
    SECTION : FORMATIONS & DIPLÔMES (TIMELINE)
 ============================================ */
-
 .formations-section {
   max-width: 80%;
   margin: 6rem auto;
@@ -393,11 +460,13 @@ body {
   margin-right: 0.5rem;
 }
 
+/* ============================================
+   ENGAGEMENTS
+============================================ */
 .engagements-section {
   max-width: 100%;
   margin: 5rem auto;
   color: var(--white);
-  
 }
 
 .engagements-section h2 { 
@@ -449,7 +518,6 @@ body {
   text-decoration: none;
 }
 
-
 /* ============================================
    RESPONSIVE
 ============================================ */
@@ -497,4 +565,121 @@ body {
     padding-left: 2rem;
     padding-right: 1rem;
   }
+}
+
+/* ============================================
+   STATS (TUILES)
+============================================ */
+.stats-section {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-tile {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  width: 180px;
+  box-shadow: 4px 4px 10px rgba(138, 21, 21, 0.7);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.stat-tile:hover {
+  background: #8a1515;
+  transform: scale(1.05);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: rgba(138, 21, 21, 0.7);
+  font-family: 'Anton', sans-serif;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+/* ============================================
+   COMPÉTENCES
+============================================ */
+.competences-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  color: var(--white);
+  text-align: center;
+}
+
+.competences-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--red);
+  padding-bottom: 0.5rem;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.atouts-wrapper {
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.atouts-carousel {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  width: max-content;
+  animation: scroll-carousel 25s linear infinite;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.atout-item {
+  flex: 0 0 140px;
+  background: var(--red-dark);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+  cursor: default;
+}
+
+.atout-item:hover {
+  transform: translateY(-6px);
+}
+
+.atout-item svg {
+  width: 34px;
+  height: 34px;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.atout-item span {
+  font-weight: 500;
+  color: var(--white);
 }

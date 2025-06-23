@@ -23,7 +23,7 @@ $router->get('/projets', function () {
 });
 
 $router->get('/projet/{slug}', function ($slug) {
-    (new \App\Controllers\ProjectController())->show($slug);
+    (new ProjectController())->show($slug);
 });
 
 
@@ -34,6 +34,12 @@ $router->get('/contact', function () {
 $router->post('/contact', function () {
     (new ContactController())->submit();
 });
+
+//competences
+$router->get('/competences', function () {
+    (new HomeController())->competences();
+});
+
 
 // Admin
 
