@@ -22,11 +22,11 @@ include $partialsPath . 'header.php';
     <div class="profile-overlay">
       <h2>Elisa Pichon <br><br>Qui suis-je ?</h2>
       <div class="profile-infos">
-        <div class="detail-box"><i data-lucide="map-pin"></i>Vannes</div>
-        <div class="detail-box"><i data-lucide="graduation-cap"></i>MyDigitalSchool</div>
-        <div class="detail-box"><i data-lucide="calendar"></i>Âge : 21 ans</div>
-        <div class="detail-box"><i data-lucide="message-square"></i>Anglais : TOEIC B2</div>
-        <div class="detail-box"><i data-lucide="message-square"></i>Espagnol</div>
+        <div class="detail-box"><i data-lucide="map-pin"></i> Vannes</div>
+        <div class="detail-box"><i data-lucide="graduation-cap"></i> Ecole : MyDigitalSchool</div>
+        <div class="detail-box"><i data-lucide="calendar"></i> Âge : 21 ans</div>
+        <div class="detail-box"><i data-lucide="message-square"></i> Anglais : TOEIC B2</div>
+        <div class="detail-box"><i data-lucide="message-square"></i> Espagnol</div>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@ include $partialsPath . 'header.php';
     <div class="stat-tile">
       <div class="stat-icon">🎧</div>
       <div class="stat-number">1240</div>
-      <div class="stat-label">Heures d'écoute</div>
+      <div class="stat-label">Heures d'écoute</div> 
     </div>
     <div class="stat-tile">
       <div class="stat-icon">📁</div>
