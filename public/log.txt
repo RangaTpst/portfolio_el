@@ -1,0 +1,2 @@
+Entrée dans send()
+Entrée dans send()

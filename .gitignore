@@ -1,0 +1,44 @@
+# Dépendances PHP
+/vendor/
+
+# Fichiers temporaires / logs
+*.log
+*.cache
+
+# Environnements
+.env
+.env.*.local
+
+# Répertoires système
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Systèmes Unix/Windows
+*.swp
+*.swo
+*.bak
+
+# Dossiers de build éventuels
+/node_modules/
+dist/
+build/
+
+# Fichiers personnels
+*.zip
+*.tar.gz
+
+# Déploiement / FTP
+.sftp-config.json
+ftpconfig.json
+
+# Tests
+coverage/
+phpunit.xml.cache
+
+# JetBrains
+/.phpstorm.meta.php/
+
+# Sauvegardes de fichiers
+*.orig

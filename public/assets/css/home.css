@@ -1,0 +1,500 @@
+/* ============================================
+   IMPORT GOOGLE FONTS
+============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap');
+
+/* ============================================
+   VARIABLES – PALETTE FEMME FATALE
+============================================ */
+:root {
+  --red: #b6162e;          /* Rouge carmin */
+  --red-dark: #520f0f;
+  --black: #1f1f1f;           /* Noir charbon */
+  --white: #f5f4f3;        /* Blanc ivoire */
+  --gold: #d7b57b;         /* Accent doré pâle */
+  --gray: #888;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   BASE
+============================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+  background: var(--black);
+  line-height: 1.6;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background-image: radial-gradient(circle at 120% 120%, #520f0f 50%, transparent 0);
+  
+}
+
+/* ============================================
+   CONTAINERS
+============================================ */
+.about-page {
+  max-width: 100%;
+  padding-bottom: 4rem;
+}
+
+/* ============================================
+   PROFIL (QUI SUIS-JE ?)
+============================================ */
+.profile-banner {
+  width: 100vw;
+  background: var(--black);
+}
+
+.profile-banner-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.profile-background img {
+  width: 100vw;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-overlay {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white);
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.profile-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--red);
+  padding-bottom: 0.5rem;
+}
+
+.profile-infos .detail-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.profile-infos .detail-box i {
+  margin-right: 0.6rem;
+  color: var(--red);
+}
+
+/* ============================================
+   ATOUTS
+============================================ */
+.atouts-section {
+  margin-top: 5rem;
+  text-align: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.atouts-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.atouts-carousel {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  width: max-content;
+  animation: scroll-carousel 25s linear infinite;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.atout-item {
+  flex: 0 0 140px;
+  background: var(--red-dark);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+/*.atout-item:hover {
+  transform: translate3d(0, -6px, 0); 
+}
+*/
+
+.atout-item svg {
+  width: 34px;
+  height: 34px;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.atout-item span {
+  font-weight: 500;
+  color: var(--white);
+}
+
+/* ============================================
+   CENTRES D’INTÉRÊT
+============================================ */
+.interets-section {
+  margin-top: 5rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.interets-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  cursor: grab;
+}
+
+.interets-wrapper.dragging {
+  cursor: grabbing;
+}
+
+.interets-carousel {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  width: max-content;
+}
+
+
+.interet-item:hover {
+  transform: translateY(-6px);
+}
+
+.interet-item svg {
+  width: 36px;
+  height: 36px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.interet-item h3 {
+  color: var(--gold);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.interet-item p {
+  color: var(--white);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   FORMATIONS
+============================================ */
+.form-futur {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.formation-wrapper {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.formation-timeline {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0 2rem;
+  width: fit-content;
+  position: relative;
+  justify-content: center;
+}
+
+.formation-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, transparent 5%, var(--red) 40%, var(--red) 60%, transparent 95%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.formation-step {
+  flex: 0 0 240px;
+  background: var(--black);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.formation-step:hover {
+  transform: translateY(-8px);
+}
+
+.formation-step::after {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: var(--shadow);
+}
+
+.formation-step .mois {
+  color: var(--gold);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.formation-step h3 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.formation-step p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   SECTION : FORMATIONS & DIPLÔMES (TIMELINE)
+============================================ */
+
+.formations-section {
+  max-width: 80%;
+  margin: 6rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--red);
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item .content {
+  background: var(--black);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item.left .content::after,
+.timeline-item.right .content::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+
+.timeline-item.left .content::after {
+  right: -26px;
+}
+
+.timeline-item.right .content::after {
+  left: -26px;
+}
+
+.timeline .date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.timeline h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.timeline p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.timeline i.icon-graduation-cap {
+  color: var(--red);
+  margin-right: 0.5rem;
+}
+
+.engagements-section {
+  max-width: 100%;
+  margin: 5rem auto;
+  color: var(--white);
+  
+}
+
+.engagements-section h2 { 
+  font-size: 2rem;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 100%;
+  padding-left: 10%;
+}
+
+.engagements-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.engagement-item {
+  position: relative;
+  padding-left: 10%;
+  background-color: #0000006e;
+}
+
+.engagement-item h3 {
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.engagement-item .periode {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 0.8rem;
+}
+
+.engagement-item ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.engagement-item li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.engagement-item a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 768px) {
+  .about-page,
+  .profile-banner-inner {
+    max-width: 92%;
+  }
+
+  .profile-banner-inner {
+    flex-direction: column;
+  }
+
+  .profile-overlay {
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .atout-item {
+    flex: 0 0 110px;
+  }
+
+  .interet-item {
+    flex: 0 0 200px;
+  }
+
+  .formation-step {
+    flex: 0 0 80%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 0;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+}

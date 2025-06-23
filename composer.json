@@ -1,0 +1,22 @@
+{
+    "name": "nicolas/portfolio_elisa",
+    "description": "Portfolio d'Élisa - webmarketing",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Rouillé",
+            "email": "nicolas.rouillelanoe@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpmailer/phpmailer": "^6.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    }
+}

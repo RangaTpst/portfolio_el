@@ -1,0 +1,138 @@
+/* Structure générale du footer */
+footer {
+    background-color: #000000;
+    color: #949494;
+    font-size: 0.95rem;
+    padding: 2rem 1rem;
+    border-top: 1px solid #ddd;
+    max-width: 100%;
+  }
+  
+  .footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15rem;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 220px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #8a8a8a;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Spécifique à la section projets */
+  .footer-section.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-section.projects ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem 2rem;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .footer-section.projects ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: #ccc;
+    transform: translateX(-0.5px);
+  }
+  
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: #949494;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-section a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+  
+  /* Bas de page */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+  }
+  
+  .cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1000;
+  display: none;
+}
+
+.cookie-banner button {
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color, #ff0055);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-section {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .footer-section.projects ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .footer-section.projects ul::before {
+      display: none;
+    }
+  }
+  

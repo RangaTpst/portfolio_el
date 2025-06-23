@@ -1,0 +1,125 @@
+:root {
+  --red: #b6162e;
+  --red-dark: #520f0f;
+  --black: #000000;
+  --white: #f5f4f3;
+  --gold: #d7b57b;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --gray: #888;
+}
+
+/* === PAGE DE CONTACT – STYLE COHÉRENT AVEC HOME.CSS === */
+body {
+    display: block;
+    margin: 0;
+    background-color: #000000;
+}
+.contact-page {
+  max-width: 80%;
+  margin: 5rem auto;
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+  background-color: var(--black);
+  background-color: #2a0a0a;
+  border-radius: 25px;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.contact_form,
+.contact_map {
+  flex: 1 1 45%;
+  background-color: var(--red-dark);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.contact_form h2,
+.contact_map h2 {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  box-shadow: inset 0 0 0 1px var(--gold);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background-color: #2a0a0a;
+  box-shadow: inset 0 0 0 2px var(--gold);
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.9rem 2rem;
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+#map {
+  height: 300px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact_form,
+  .contact_map {
+    flex: 1 1 100%;
+  }
+}

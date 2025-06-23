@@ -1,0 +1,97 @@
+/* === FOND === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000000;
+  background-image: radial-gradient(ellipse at 3000px 3000px, rgb(138, 21, 21) 50%, transparent 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  color: #fff;
+}
+
+/* === TITRE PRINCIPAL === */
+.projects-page {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.projects-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* === GRILLE DE PROJETS === */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* === WRAPPER DE CARTE === */
+.project-card-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.project-card-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* === CARTE === */
+.project-card {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 0; /* Important pour éviter les espaces fantômes avec inline elements */
+  padding: 0;
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+/* === OVERLAY === */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h2 {
+  font-size: 1.4rem;
+  color: #ff4081;
+  margin-bottom: 0.5rem;
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0.3rem 0;
+}
