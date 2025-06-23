@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="icon" href="<?= BASE_URL ?>favicon.ico" type="image/x-icon">
+
 
   <?php if (isset($isProjectPage) && $isProjectPage): ?>
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/project.css">
