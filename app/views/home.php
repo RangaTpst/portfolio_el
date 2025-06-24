@@ -69,11 +69,11 @@ include $partialsPath . 'header.php';
       <?php
         $atouts = [
   ['Créative', 'sparkles'],
-  ['Ponctuele', 'check-circle'],
+  ['Ponctuelle', 'check-circle'],
   ['Curieuse', 'search'],
   ['Autonome', 'smile'],
   ['Empathique', 'heart-handshake'],
-  ['Polivalente', 'arrow-up-narrow-wide']
+  ['Polyvalente', 'arrow-up-narrow-wide']
 ];
 
 foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
