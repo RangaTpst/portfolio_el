@@ -119,7 +119,7 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     <div class="formation-timeline">
       <?php
         $futur = [
-          ['Sept. 2025', 'MBA WebMarketing', 'Contact école : Sherley BURBAN <br>    
+          ['Septembre 2025', 'MBA WebMarketing', 'Contact école : Sherley BURBAN <br>    
           06 27 87 02 68
           sherley.burban@mydigitalschool.com'],
         ];
@@ -146,22 +146,22 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
       <div class="timeline-item left">
         <div class="content">
           <span class="date">2025</span>
-          <h3><i class="icon-graduation-cap"></i> Bachelor Webmarketing</h3>
-          <p>MyDigitalSchool – Vannes<br>Spécialisation en stratégie digitale, UX, SEO, branding.</p>
+          <h3><i class="icon-graduation-cap"></i> Bachelor Webmarketing & Social Medias</h3>
+          <p>MyDigitalSchool – PLESCOP<br>Analyse stratégique, référencement SEO, .</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="content">
           <span class="date">2024</span>
-          <h3><i class="icon-graduation-cap"></i> Licence MIS</h3>
-          <p>UBS Vannes<br>Licence Mathématiques, Informatique et Statistiques</p>
+          <h3><i class="icon-graduation-cap"></i> Licence Mathématiques Informatique et Statistiques</h3>
+          <p>Université Bretagne Sud - VANNES<br>Technologies Web, HTML/CSS/JavaScript, Java, Mathématiques Fondamentales</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="content">
           <span class="date">2022</span>
-          <h3><i class="icon-graduation-cap"></i> Bac général</h3>
-          <p>Lycée kerneuzec – Quimperlé<br>Numérique et Sciences de l’Informatique, Mathématiques et Physique-Chimie</p>
+          <h3><i class="icon-graduation-cap"></i> Baccalauréat général</h3>
+          <p>Lycée de Kerneuzec – QUIMPERLE<br>Spécialités Numérique et Sciences de l’Informatique, Mathématiques et Physique-Chimie</p>
         </div>
       </div>
     </div>
@@ -177,7 +177,7 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     <div class="engagement-item">
       <h3>🎓 Étudiante Ambassadrice</h3>  
       <p class="periode">De septembre 2023 à août 2024 – 
-        <a href="https://www.univ-ubs.fr" target="_blank">Université Bretagne Sud SSI</a>, Vannes</p>
+        <a href="https://www.univ-ubs.fr" target="_blank">Université Bretagne Sud SSI</a>, VANNES</p>
       <ul>
         <li>Contribuer au rayonnement de l’offre de formation de l’Université</li>
         <li>Interventions lors des JPO afin d’accompagner les lycéens</li>
@@ -190,7 +190,7 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     <div class="engagement-item">
       <h3>🏫 Présidente / Membre d’honneur / Trésorière</h3>
       <p class="periode">Depuis septembre 2020 – 
-        <a href="http://www.lycee-kerneuzec.fr" target="_blank">MDL Lycée de Kerneuzec</a>, Quimperlé</p>
+        <a href="http://www.lycee-kerneuzec.fr" target="_blank">MDL Lycée de Kerneuzec</a>, QUIMPERLE</p>
       <ul>
         <li>Gestion de trésorerie</li>
         <li>Gestion administrative</li>
