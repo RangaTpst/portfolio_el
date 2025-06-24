@@ -54,8 +54,6 @@ class AdminController extends BaseController
         ]);
     }
 
-    // --- CRUD Projects ---
-
     public function showAddForm()
     {
         if (!$this->isAdmin()) {
@@ -91,50 +89,48 @@ class AdminController extends BaseController
     }
 
     public function showEditForm($slug)
-{
-    if (!$this->isAdmin()) {
-        $this->redirect('login-35f1d9a');
+    {
+        if (!$this->isAdmin()) {
+            $this->redirect('login-35f1d9a');
+        }
+
+        $model = new ProjectModel();
+        $project = $model->getBySlug($slug);
+
+        if (!$project) {
+            echo "Projet introuvable.";
+            return;
+        }
+
+        $this->render('admin/edit-project.php', ['project' => $project]);
     }
 
-    $model = new ProjectModel();
-    $project = $model->getBySlug($slug); //slug en bdd
+    public function handleEdit($slug)
+    {
+        if (!$this->isAdmin()) {
+            $this->redirect('login-35f1d9a');
+        }
 
-    if (!$project) {
-        echo "Projet introuvable.";
-        return;
+        $model = new ProjectModel();
+        $project = $model->getBySlug($slug);
+
+        if (!$project) {
+            echo "Projet introuvable.";
+            return;
+        }
+
+        $data = [
+            'name' => $_POST['name'] ?? '',
+            'slug' => $_POST['slug'] ?? '',
+            'date_realisation' => $_POST['date_realisation'] ?? '',
+            'pdf' => $_POST['pdf'] ?? '',
+            'images' => $_POST['images'] ?? ''
+        ];
+
+        $model->update((int)$project['id'], $data);
+
+        $this->redirect('dashboard-9f6cd1f');
     }
-
-    $this->render('admin/edit-project.php', ['project' => $project]);
-}
-
-
-public function handleEdit($slug)
-{
-    if (!$this->isAdmin()) {
-        $this->redirect('login-35f1d9a');
-    }
-
-    $model = new ProjectModel();
-    $project = $model->getBySlug($slug); // On récupère les infos du projet
-
-    if (!$project) {
-        echo "Projet introuvable."; 
-        return;
-    }
-
-    $data = [
-        'name' => $_POST['name'] ?? '',
-        'slug' => $_POST['slug'] ?? '',
-        'date_realisation' => $_POST['date_realisation'] ?? '',
-        'pdf' => $_POST['pdf'] ?? '',
-        'images' => $_POST['images'] ?? ''
-    ];
-
-    $model->update((int)$project['id'], $data); // ✅ On passe bien un entier ici
-
-    $this->redirect('dashboard-9f6cd1f');
-}
-
 
     public function delete($id)
     {
@@ -144,6 +140,62 @@ public function handleEdit($slug)
 
         $model = new ProjectModel();
         $model->delete($id);
+
+        $this->redirect('dashboard-9f6cd1f');
+    }
+
+    public function showManageCompetences($id)
+    {
+        if (!$this->isAdmin()) {
+            $this->redirect('login-35f1d9a');
+        }
+
+        $model = new ProjectModel();
+        $project = $model->getById((int)$id);
+
+        if (!$project) {
+            echo "Projet introuvable.";
+            return;
+        }
+
+        $allCompetences = $model->getAllCompetences();
+        $selectedCompetences = $model->getCompetencesForProject((int)$id);
+
+        $this->render('admin/manage-competences.php', [
+            'project' => $project,
+            'allCompetences' => $allCompetences,
+            'selectedCompetences' => $selectedCompetences
+        ]);
+    }
+
+    public function handleManageCompetences($id)
+    {
+        if (!$this->isAdmin()) {
+            $this->redirect('login-35f1d9a');
+        }
+
+        $competences = $_POST['competences'] ?? [];
+
+        $config = require __DIR__ . '/../../../config/bdd/config.php';
+        $pdo = new \PDO(
+            "mysql:host={$config['db_host']};dbname={$config['db_name']};charset=utf8mb4",
+            $config['db_user'],
+            $config['db_pass'],
+            [
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+            ]
+        );
+
+        $stmt = $pdo->prepare("DELETE FROM project_competences WHERE project_id = ?");
+        $stmt->execute([$id]);
+
+        if (!empty($competences)) {
+            $stmt = $pdo->prepare("INSERT INTO project_competences (project_id, competence_id) VALUES (?, ?)");
+            foreach ($competences as $compId) {
+                $stmt->execute([$id, $compId]);
+            }
+        }
 
         $this->redirect('dashboard-9f6cd1f');
     }

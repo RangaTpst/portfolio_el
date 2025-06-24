@@ -20,7 +20,8 @@ include $partialsPath . 'header.php';
 
     <!-- Bloc infos -->
     <div class="profile-overlay">
-      <h2>Elisa Pichon <br><br>Qui suis-je ?</h2>
+      <h1>Elisa Pichon </h1>
+      <h2><br>Qui suis-je ?</h2>
       <div class="profile-infos">
         <div class="detail-box"><i data-lucide="map-pin"></i> Vannes</div>
         <div class="detail-box"><i data-lucide="graduation-cap"></i> Ecole : MyDigitalSchool</div>
@@ -43,11 +44,13 @@ include $partialsPath . 'header.php';
       <div class="stat-number">1240</div>
       <div class="stat-label">Heures d'écoute</div> 
     </div>
-    <div class="stat-tile">
-      <div class="stat-icon">📁</div>
-      <div class="stat-number"><?= count($projects) ?></div>
-      <div class="stat-label">Projets réalisés</div>
-    </div>
+    <a href="<?= BASE_URL ?>projets" class="stat-link">
+      <div class="stat-tile clickable">
+        <div class="stat-icon">📁</div>
+        <div class="stat-number"><?= count($projects) ?></div>
+        <div class="stat-label">Projets réalisés</div>
+      </div>
+    </a>
     <div class="stat-tile">
       <div class="stat-icon">✏️</div>
       <div class="stat-number">42</div>
@@ -86,6 +89,34 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     </div>
     </div>
   </section>
+
+  <!-- ============================
+       Compétences
+  ============================= -->
+
+
+<section class="skills-section">
+  <h2>Mes compétences</h2>
+
+  <div class="skills-wrapper" id="skills-wrapper">
+    <div class="skills-carousel" id="skills-track">
+      <?php foreach ($skills as $skill): ?>
+        <a href="<?= BASE_URL ?>projets"         
+           class="skill-item">
+          <span><?= htmlspecialchars($skill['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+
+  <div class="skills-btn-container">
+    <a href="<?= BASE_URL ?>projets" class="btn-skills">Voir tous les projets</a>
+  </div>
+</section>
+
+
+
+
 
   <!-- ============================
        CENTRES D’INTÉRÊT

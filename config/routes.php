@@ -63,6 +63,14 @@ $router->get('/dashboard-9f6cd1f', function () {
     (new AdminController())->dashboard();
 });
 
+// Gérer les compétences associées à un projet
+$router->get('/admin/manage-competences/{id}', function ($id) {
+    (new AdminController())->showManageCompetences($id);
+});
+
+$router->post('/admin/manage-competences/{id}', function ($id) {
+    (new AdminController())->handleManageCompetences($id);
+});
 // CRUD Projets
 
 // Ajouter un projet

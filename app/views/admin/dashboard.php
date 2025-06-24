@@ -12,14 +12,23 @@ require_once __DIR__ . '/../partials/header-admin.php';
 
     <a href="<?= BASE_URL ?>admin/add-project" class="btn">Ajouter un projet</a>
 
-
     <?php if (!empty($projects)) : ?>   
-        <ul>
+        <ul class="project-list">
             <?php foreach ($projects as $project) : ?>
-                <li>
-                    <?= htmlspecialchars($project['name']) ?>
-                    <a href="<?= BASE_URL ?>admin/edit-project/<?= urlencode($project['slug']) ?>">Modifier</a>
-                    <a href="<?= BASE_URL ?>admin/delete-project/<?= $project['id'] ?>" onclick="return confirm('Supprimer ce projet ?')">Supprimer</a>
+                <li class="project-item">
+                    <strong><?= htmlspecialchars($project['name']) ?></strong><br>
+
+                    <span class="small-label">Compétences :</span>
+                    <?php if (!empty($project['competence'])): ?>
+                        <?= htmlspecialchars($project['competence']) ?>
+                    <?php else: ?>
+                        <em>Aucune</em>
+                    <?php endif; ?>
+                    <br>
+
+                    <a href="<?= BASE_URL ?>admin/edit-project/<?= urlencode($project['slug']) ?>">Modifier</a> |
+                    <a href="<?= BASE_URL ?>admin/delete-project/<?= $project['id'] ?>" onclick="return confirm('Supprimer ce projet ?')">Supprimer</a> |
+                    <a href="<?= BASE_URL ?>admin/manage-competences/<?= $project['id'] ?>">Gérer les compétences</a>
                 </li>
             <?php endforeach; ?>
         </ul>

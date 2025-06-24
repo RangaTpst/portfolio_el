@@ -95,6 +95,12 @@ footer {
   border-bottom-right-radius: var(--radius);
 }
 
+.profile-overlay h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .profile-overlay h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -112,6 +118,13 @@ footer {
 .profile-infos .detail-box i {
   margin-right: 0.6rem;
   color: var(--red);
+}
+
+.detail-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* Espace entre l'icône et le texte */
+  margin-bottom: 0.8rem; /* Espace entre chaque ligne */
 }
 
 /* ============================================
@@ -571,54 +584,63 @@ footer {
    STATS (TUILES)
 ============================================ */
 .stats-section {
+  width: 100%;
+  background: #460000;
   padding: 3rem 1rem;
-  text-align: center;
-  color: #fff;
+  color: var(--white);
 }
 
 .stats-container {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .stat-tile {
-  background: #1f1f1f;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  width: 180px;
-  box-shadow: 4px 4px 10px rgba(138, 21, 21, 0.7);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.stat-tile:hover {
-  background: #8a1515;
-  transform: scale(1.05);
+  flex: 1 1 200px;
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: none; 
 }
 
 .stat-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .stat-number {
-  font-size: 2.5rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 0.5rem;
-  color: rgba(138, 21, 21, 0.7);
-  font-family: 'Anton', sans-serif;
 }
 
 .stat-label {
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #ccc;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
+.stat-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1 1 200px;
+}
+
+.stat-tile.clickable {
+  cursor: pointer;
+}
+.stat-link:hover {
+  text-decoration: none; /* supprime le soulignement */
+}
+
+.stat-link .stat-label {
+  text-decoration: none;
+}
 /* ============================================
    COMPÉTENCES
 ============================================ */
@@ -682,4 +704,59 @@ footer {
 .atout-item span {
   font-weight: 500;
   color: var(--white);
+}
+
+.skills-section {
+  margin-top: 5rem;
+  text-align: center;
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.skills-wrapper {
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+}
+
+.skills-wrapper:active {
+  cursor: grabbing;
+}
+
+.skills-carousel {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.skills-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.skill-item {
+  flex: 0 0 140px;
+  background: var(--red-dark);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.skill-item:hover {
+  transform: translateY(-6px);
+}
+
+.skill-item span {
+  font-weight: 500;
+  color: var(--white);
+  pointer-events: none; /* évite les sélections qui cassent le drag */
+}
+
+.skills-btn-container {
+  margin-top: 2rem;
 }

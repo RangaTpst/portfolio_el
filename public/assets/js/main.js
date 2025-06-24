@@ -78,4 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
       carouselTrack.scrollBy({ left: slideWidth, behavior: 'smooth' });
     });
   }
+
+
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.getElementById('skills-wrapper');
+  const track = document.getElementById('skills-track');
+
+  wrapper.addEventListener('wheel', (e) => {
+    // Défilement vertical devient horizontal
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      track.scrollBy({
+        left: e.deltaY * 1.5,
+        behavior: 'smooth'
+      });
+    }
+  }, { passive: false });
+});
+
+
+
