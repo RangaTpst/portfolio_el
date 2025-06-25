@@ -35,6 +35,8 @@ $router->post('/contact', function () {
     (new ContactController())->submit();
 });
 
+
+
 //competences
 $router->get('/competences', function () {
     (new HomeController())->competences();

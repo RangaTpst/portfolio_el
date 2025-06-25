@@ -8,43 +8,47 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 class Mailer
 {
-    public static function sendWithAttachment($to, $subject, $bodyText, $filePath)
+    public static function sendWithAttachment($to, $subject, $bodyText, $filePath = null): bool
 {
     $mail = new PHPMailer(true);
 
-    // Affichage brut à l'écran (utile en dev)
-    echo "<pre>";
-
     try {
-
-
         $mail->isSMTP();
         $mail->Host       = 'ssl0.ovh.net';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'contact@elisa-pichon.fr';
-        $mail->Password   = 'TON_MDP_ICI';
+        $mail->SMTPOptions = [ # a enlever en prod
+    'ssl' => [                           
+        'verify_peer'       => false,
+        'verify_peer_name'  => false,
+        'allow_self_signed' => true
+    ]
+];
+        $mail->Username   = 'fbgehzfuhegfvbeshzjfvb';
+        $mail->Password   = '@gruejghjrekgbhrjkg';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         $mail->setFrom('contact@elisa-pichon.fr', 'Elisa Pichon');
         $mail->addAddress($to);
 
+        $mail->CharSet = 'UTF-8';
         $mail->isHTML(false);
         $mail->Subject = $subject;
         $mail->Body    = $bodyText;
 
-        if (file_exists($filePath)) {
+        if ($filePath && file_exists($filePath)) {
             $mail->addAttachment($filePath);
         }
 
         $mail->send();
-        echo "✅ Email envoyé avec succès";
+        error_log("✅ Mail envoyé à $to ($subject)");
+        return true;
 
     } catch (Exception $e) {
-        echo "❌ Erreur d'envoi : " . $mail->ErrorInfo;
+        error_log("❌ Mailer error : ".$mail->ErrorInfo);
+        return false;
     }
-
-    echo "</pre>";
 }
+
 
 }

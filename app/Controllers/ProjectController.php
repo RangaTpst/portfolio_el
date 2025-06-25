@@ -125,5 +125,6 @@ public function handleManageCompetences(int $projectId): void
     $this->redirect('dashboard-9f6cd1f');
 }
 
+
 }
 

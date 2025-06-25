@@ -178,7 +178,7 @@
     <div class="accordion-item">
       <button class="accordion-title">Objectif général <span class="accordion-icon">+</span></button>
       <div class="accordion-content">
-        <img src="<?= BASE_URL ?>assets/images/projects/rtbconseil/persona1.png" alt="P1">
+        <img src="<?= BASE_URL ?>assets/images/projects/rtbconseil/objectif_rtb.png" alt="objectifs">
     </div>
     <div class="accordion-item">
       <button class="accordion-title">Leviers & KPI <span class="accordion-icon">+</span></button>

@@ -101,3 +101,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track   = document.getElementById('projects-carousel');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const tileW  = track.querySelector('.project-slide').offsetWidth + 24; // 260 + 1.5rem
+  let offset   = 0;                        // translation actuelle
+  const maxOff = -(tileW * (track.children.length - 1));
+
+  const update = () => track.style.transform = `translateX(${offset}px)`;
+
+  nextBtn.addEventListener('click', () => {
+    offset = Math.max(offset - tileW, maxOff);
+    update();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    offset = Math.min(offset + tileW, 0);
+    update();
+  });
+
+  /* recalcul si resize */
+  window.addEventListener('resize', () => {
+    const newTileW = track.querySelector('.project-slide').offsetWidth + 24;
+    offset = Math.max(offset, -(newTileW * (track.children.length - 1)));
+    update();
+  });
+});
+
+

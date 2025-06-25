@@ -31,7 +31,16 @@ class HomeController extends BaseController
     }
 
     public function competences()
-    {
-        $this->render('competences.php');
-    }
+{
+    $model = new ProjectModel();
+
+    $projects = $model->getAll();
+    $skills = $model->getAllCompetences(); // <-- AJOUTÉ
+
+    $this->render('competences.php', [
+        'projects' => $projects,
+        'skills' => $skills // <-- AJOUTÉ
+    ]);
+}
+
 }

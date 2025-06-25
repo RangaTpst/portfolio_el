@@ -232,6 +232,27 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
   </div>
 </section>
 
+<section class="projects-carousel-section">
+  <h2>Mes derniers projets</h2>
+
+  <div class="projects-carousel-wrapper">
+    <button class="carousel-arrow left" id="carousel-prev">&#10094;</button>
+
+    <div class="projects-carousel" id="projects-carousel">
+      <?php foreach ($projects as $project): ?>
+        <a href="<?= BASE_URL ?>projet/<?= htmlspecialchars($project['slug']) ?>" class="project-slide">
+          <img src="<?= BASE_URL ?>assets/images/projects/<?= htmlspecialchars($project['images']) ?>" alt="<?= htmlspecialchars($project['name']) ?>">
+          <span><?= htmlspecialchars($project['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+      <!-- Pas besoin de duplication car plus d’animation -->
+    </div>
+
+    <button class="carousel-arrow right" id="carousel-next">&#10095;</button>
+  </div>
+</section>
+
+
 
 </div>
 

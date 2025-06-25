@@ -25,25 +25,35 @@ include $partialsPath . 'header.php';
   </div>
 
   <h2>Hard Skills</h2>
-  <div class="atouts-wrapper">  
-    <div class="atouts-carousel hard-skills">
-      <div class="atout-item"><i class="lucide" data-lucide="chrome"></i><span>SEO<span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="cog"></i><span>CMS</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="file-chart-column-increasing"></i><span>Analyse Stratégique</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="instagram"></i><span>Création de contenus</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="clapperboard"></i><span>Production vidéo</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="pen-tool"></i><span>Production Graphique Web</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="lock-keyhole-open"></i><span>Stratégie Social-media</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="presentation"></i><span>Marketing digitale</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="braces"></i><span>JAVA</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="code-xml"></i><span>PYTHON</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="square-code"></i><span>HTML / CSS / JS</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="monitor"></i><span>Gestion de projets</span></div>
+<div class="atouts-wrapper">  
+  <div class="atouts-carousel hard-skills">
+    <?php foreach ($skills as $skill): ?>
+      <a href="<?= BASE_URL ?>projets?competence=<?= htmlspecialchars($skill['slug']) ?>" class="atout-item">
+        <span><?= htmlspecialchars($skill['name']) ?></span>
+      </a>
+    <?php endforeach; ?>
+  </div>
+</div>
 
-      <!-- Dupliquer pour boucle infinie -->
-      <div class="atout-item"><i class="lucide" data-lucide="chrome"></i><span>SEO</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="cog"></i><span>CMS</span></div>
+</section>
+
+<section class="projects-carousel-section">
+  <h2>Mes derniers projets</h2>
+
+  <div class="projects-carousel-wrapper">
+    <button class="carousel-arrow left" id="carousel-prev">&#10094;</button>
+
+    <div class="projects-carousel" id="projects-carousel">
+      <?php foreach ($projects as $project): ?>
+        <a href="<?= BASE_URL ?>projet/<?= htmlspecialchars($project['slug']) ?>" class="project-slide">
+          <img src="<?= BASE_URL ?>assets/images/projects/<?= htmlspecialchars($project['images']) ?>" alt="<?= htmlspecialchars($project['name']) ?>">
+          <span><?= htmlspecialchars($project['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+      <!-- Pas besoin de duplication car plus d’animation -->
     </div>
+
+    <button class="carousel-arrow right" id="carousel-next">&#10095;</button>
   </div>
 </section>
 
@@ -65,3 +75,5 @@ include $partialsPath . 'header.php';
     });
   });
 </script>
+
+<script src="<?= BASE_URL ?>assets/js/main.js"></script>
