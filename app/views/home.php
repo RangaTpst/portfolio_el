@@ -98,11 +98,10 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
 <section class="skills-section">
   <h2>Mes compétences</h2>
 
-  <div class="skills-wrapper" id="skills-wrapper">
-    <div class="skills-carousel" id="skills-track">
+  <div class="atouts-wrapper">  
+    <div class="atouts-carousel hard-skills">
       <?php foreach ($skills as $skill): ?>
-        <a href="<?= BASE_URL ?>projets"         
-           class="skill-item">
+        <a href="<?= BASE_URL ?>projets?competence=<?= htmlspecialchars($skill['slug']) ?>" class="atout-item">
           <span><?= htmlspecialchars($skill['name']) ?></span>
         </a>
       <?php endforeach; ?>
@@ -113,6 +112,8 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
     <a href="<?= BASE_URL ?>projets" class="btn-skills">Voir tous les projets</a>
   </div>
 </section>
+
+
 
 
 
