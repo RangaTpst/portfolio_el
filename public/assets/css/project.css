@@ -1,13 +1,13 @@
 /* ====================  FOND  ==================== */
 html, body {
-  height: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: #000000;
-  background-image: radial-gradient(ellipse at 3000px 3000px, rgb(138, 21, 21) 50%, transparent 0);
+ background-image: radial-gradient(ellipse at 3000px 3000px, rgb(138, 21, 21) 50%, transparent 0);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -489,4 +489,59 @@ footer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+/* === Vidéo finale (section standard) === */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 640px; /* taille réduite */
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background-color: #000;
+  transition: transform 0.3s ease;
+}
+
+.video-wrapper video:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
+  .video-wrapper video {
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+}
+
+/* === Vidéos dans carrousel (section rushs) === */
+.carousel-slide video {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  background-color: #000;
+}
+
+.carousel-slide video:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .carousel-slide video {
+    max-width: 100%;
+    border-radius: 8px;
+  }
 }
