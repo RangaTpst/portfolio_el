@@ -10,14 +10,14 @@
         <h2>Éditeur du site</h2>
         <p><strong>Nom :</strong> Elisa Pichon</p>
         <p><strong>Adresse :</strong> 56250 Monterblanc, France</p>
-        <p><strong>Email de contact :</strong> <a href="mailto:pichonelisa29@gmail.com">pichonelisa29@gmail.com</a></p>
+        <p><strong>Email de contact :</strong> <a href="mailto:pichon.elisa29@gmail.com">pichonelisa29@gmail.com</a></p>
         <p><strong>Statut :</strong> Particulier – site non commercial</p>
     </section>
 
     <section class="mb-5">
         <h2>Responsable de la publication</h2>
         <p>Elisa Pichon<br>
-        Contact : <a href="mailto:pichonelisa29@gmail.com">pichonelisa29@gmail.com</a></p>
+        Contact : <a href="mailto:pichon.elisa29@gmail.com">pichonelisa29@gmail.com</a></p>
     </section>
 
     <section class="mb-5">

@@ -1,3 +1,8 @@
+<!-- PAGE Lucile Cuisine -->
+
+<!-- Ajoute cette classe dans le <body> pour cibler cette page -->
+<body class="project-lucile">
+
 <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/project.css"> 
 
 <!-- Fond elliptique figé -->
@@ -58,75 +63,36 @@
   </div>
 </section>
 
+<!-- ===== ALBUM PHOTO – Lucile Cuisine ===== -->
 <section class="project-section">
   <div class="section-container">
     <div class="section-box">
-      <h2>Extraits & rushs</h2>
-      <div id="rushs-carousel" class="carousel-container">
-        <div id="rushs-track" class="carousel-track">
+      <h2>Album photos</h2>
 
-          <!-- Slide 1 -->
-          <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/projects/lucile-cuisine/rushs/rush1.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/projects/lucile-cuisine/rushs/rush2.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/projects/lucile-cuisine/rushs/rush3.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-          <!-- Slide 4 -->
-                    <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/projects/lucile-cuisine/rushs/rush4.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-          <!-- Slide 5 -->
-                    <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/projects/lucile-cuisine/rushs/rush5.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-          <!-- Slide 6 -->
-                    <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/projects/lucile-cuisine/rushs/rush6.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-          <!-- Slide 7 -->
-                    <div class="carousel-slide">
-            <video controls>
-              <source src="<?= BASE_URL ?>assets/videos/rushs/rush7.mp4" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
-          </div>
-
+      <div class="album-grid">
+        <div class="album-item">
+          <img src="<?= BASE_URL ?>assets/images/projects/lucile-cuisine/image1.png" alt="" loading="lazy">
         </div>
-
-        <button class="carousel-btn prev">&#10094;</button>
-        <button class="carousel-btn next">&#10095;</button>
+        <div class="album-item">
+          <img src="<?= BASE_URL ?>assets/images/projects/lucile-cuisine/image2.png" alt="" loading="lazy">
+        </div>
+        <div class="album-item">
+          <img src="<?= BASE_URL ?>assets/images/projects/lucile-cuisine/image3.png" alt="" loading="lazy">
+        </div>
+        <div class="album-item">
+          <img src="<?= BASE_URL ?>assets/images/projects/lucile-cuisine/image4.png" alt="" loading="lazy">
+        </div>
+        <div class="album-item">
+          <img src="<?= BASE_URL ?>assets/images/projects/lucile-cuisine/image5.png" alt="" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- Icônes -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>lucide.createIcons();</script>
 <script src="<?= BASE_URL ?>assets/js/main.js"></script>
+
+</body>

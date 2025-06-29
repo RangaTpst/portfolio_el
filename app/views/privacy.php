@@ -32,24 +32,28 @@
         <p>Les messages envoyés via le formulaire sont transmis par email à Elisa Pichon et peuvent être conservés dans sa boîte de réception à des fins de suivi. Aucune base de données externe n’est utilisée à cet effet.</p>
     </section>
 
-    <section class="mb-5">
+<section class="mb-5">
   <h2>5. Cookies</h2>
   <p>
-    Ce site utilise uniquement des cookies techniques strictement nécessaires à son bon fonctionnement.
-    Aucun cookie publicitaire ou de suivi n’est déposé sans votre consentement explicite.
+    Ce site utilise des cookies techniques nécessaires à son bon fonctionnement, ainsi que des cookies de mesure d’audience fournis par Google Analytics.
   </p>
   <p>
-    Lors de votre première visite, un bandeau vous informe de l’utilisation des cookies. Vous avez alors la possibilité d’accepter ou de refuser les cookies non essentiels. Votre choix est conservé pendant une durée de 12 mois.
+    Les cookies de mesure d’audience ne sont déposés qu’avec votre consentement explicite, recueilli via un bandeau d’information affiché lors de votre première visite. Votre choix (accepter ou refuser) est conservé pendant une durée de 12 mois.
   </p>
   <p>
-    Vous pouvez modifier votre choix à tout moment en cliquant sur le lien <strong>"Gérer mes cookies"</strong> disponible en bas de page.
+    Google Analytics permet de collecter des informations anonymisées sur la fréquentation et la navigation des utilisateurs, dans le but d’améliorer l’expérience proposée sur ce site.
+  </p>
+  <p>
+    Vous pouvez modifier votre choix à tout moment en cliquant sur le lien <strong>"Gérer mes cookies"</strong> en bas de page.
   </p>
 </section>
 
 
+
+
     <section class="mb-5">
         <h2>6. Droits des utilisateurs</h2>
-        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous pouvez demander à accéder, rectifier ou supprimer vos données personnelles à tout moment en écrivant à : <a href="mailto:pichonelisa29@gmail.com">pichonelisa29@gmail.com</a>.</p>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous pouvez demander à accéder, rectifier ou supprimer vos données personnelles à tout moment en écrivant à : <a href="mailto:pichon.elisa29@gmail.com">pichonelisa29@gmail.com</a>.</p>
     </section>
 
     <section>
