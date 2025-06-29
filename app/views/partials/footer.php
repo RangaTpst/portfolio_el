@@ -39,20 +39,20 @@
   </div>
 
   <div class="footer-bottom">
-  © 2025 | Tous droits réservés —
-  <a href="#" onclick="document.getElementById('cookie-banner').style.display = 'block'; return false;">
-    Gérer mes cookies
-  </a>
-</div>
+    © 2025 | Tous droits réservés —
+    <a href="#" onclick="document.getElementById('cookie-banner').style.display = 'block'; return false;">
+      Gérer mes cookies
+    </a>
+  </div>
 
   <!-- Bandeau cookies -->
   <div id="cookie-banner" class="cookie-banner">
     <p>
-  Ce site utilise des cookies pour améliorer votre expérience.
-  <a href="<?= BASE_URL ?>politique-confidentialite" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">
-    En savoir plus
-  </a>.
-</p>
+      Ce site utilise des cookies pour améliorer votre expérience.
+      <a href="<?= BASE_URL ?>politique-confidentialite" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">
+        En savoir plus
+      </a>.
+    </p>
 
     <button id="accept-cookies">Accepter</button>
     <button id="decline-cookies">Refuser</button>
@@ -65,21 +65,36 @@
       let expires = "";
       if (days) {
         let date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
       }
-      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
     }
 
     function getCookie(name) {
       let nameEQ = name + "=";
       let ca = document.cookie.split(';');
-      for(let i=0;i < ca.length;i++) {
+      for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
       }
       return null;
+    }
+
+    function loadGoogleAnalytics() {
+      const script = document.createElement('script');
+      script.setAttribute('async', '');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-TCY5PKX7YL"; // 🔁 Remplace ici
+      document.head.appendChild(script);
+
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-TCY5PKX7YL'); // 🔁 Et ici aussi
+      };
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -94,13 +109,17 @@
       accept.onclick = function () {
         setCookie("cookieConsent", "true", 365);
         banner.style.display = "none";
-        // Ici, tu peux activer Google Analytics si besoin
+        loadGoogleAnalytics();
       };
 
       decline.onclick = function () {
         setCookie("cookieConsent", "false", 365);
         banner.style.display = "none";
       };
+
+      if (getCookie("cookieConsent") === "true") {
+        loadGoogleAnalytics();
+      }
     });
   </script>
 </footer>
