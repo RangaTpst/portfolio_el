@@ -53,7 +53,7 @@
 
     <section class="mb-5">
         <h2>6. Droits des utilisateurs</h2>
-        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous pouvez demander à accéder, rectifier ou supprimer vos données personnelles à tout moment en écrivant à : <a href="mailto:pichon.elisa29@gmail.com">pichonelisa29@gmail.com</a>.</p>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous pouvez demander à accéder, rectifier ou supprimer vos données personnelles à tout moment en écrivant à : <a href="mailto:pichon.elisa29@gmail.com">pichon.elisa29@gmail.com</a>.</p>
     </section>
 
     <section>
