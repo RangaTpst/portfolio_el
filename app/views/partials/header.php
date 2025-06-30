@@ -27,7 +27,7 @@
 <header>
   <nav class="navbar">
     <div class="nav-left">
-      <a href="<?= BASE_URL ?>competences">Mes compétences</a>
+      <a href="<?= BASE_URL ?>competences">Mes Compétences</a>
       <a href="<?= BASE_URL ?>projets">Mes Projets</a>
     </div>
 

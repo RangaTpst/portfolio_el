@@ -264,7 +264,7 @@
   <h2>Ciblage</h2>
   <div class="accordion">
     <div class="accordion-item">
-      <button class="accordion-title">cibles <span class="accordion-icon">+</span></button>
+      <button class="accordion-title">Cibles <span class="accordion-icon">+</span></button>
       <div class="accordion-content">
         <img src="<?= BASE_URL ?>assets/images/projects/uniq-and-co/cible_uniqco.png" alt="Cible UNIQ & Co" />
       </div>

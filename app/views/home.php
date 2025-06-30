@@ -145,7 +145,7 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
        FORMATIONS À VENIR
   ============================= -->
   <section id="form-futur" class="form-futur">
-  <h2>Ma formations à venir</h2>
+  <h2>Ma formation à venir</h2>
 
   <div class="formation-wrapper">
     <div class="formation-timeline">
@@ -178,8 +178,8 @@ foreach (array_merge($atouts, $atouts) as [$label, $icon]) {
       <div class="timeline-item left">
         <div class="content">
           <span class="date">2025</span>
-          <h3><i class="icon-graduation-cap"></i> Bachelor Webmarketing & Social Medias</h3>
-          <p>MyDigitalSchool – PLESCOP<br>Analyse stratégique, référencement SEO, .</p>
+          <h3><i class="icon-graduation-cap"></i> Bachelor Webmarketing & Social Media</h3>
+          <p>MyDigitalSchool – PLESCOP<br>Analyse stratégique, référencement SEO.</p>
         </div>
       </div>
       <div class="timeline-item right">

@@ -43,12 +43,16 @@ html, body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  max-width: 100%;            /* assure le plein espace dispo */
+  max-width: 100%;   
+  place-items: center;         /* assure le plein espace dispo */
 }
 
 /* ===== hover / wrapper ===== */
 .project-card-wrapper {
   transition: transform .3s ease;
+  max-width: 400px;
+  
+
 }
 .project-card-wrapper:hover {
   transform: scale(1.05);
@@ -60,6 +64,7 @@ html, body {
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  
 }
 .project-card img {
   width: 100%;

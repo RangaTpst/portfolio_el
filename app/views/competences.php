@@ -19,8 +19,6 @@ include $partialsPath . 'header.php';
       <div class="atout-item"><i class="lucide" data-lucide="users"></i><span>Travail en équipe</span></div>
       <div class="atout-item"><i class="lucide" data-lucide="notebook-pen"></i><span>Organisation</span></div>
       <!-- Dupliquer les items pour effet infini -->
-      <div class="atout-item"><i class="lucide" data-lucide="users"></i><span>Communication</span></div>
-      <div class="atout-item"><i class="lucide" data-lucide="heart-handshake"></i><span>Empathie</span></div>
     </div>
   </div>
 

@@ -20,7 +20,7 @@
         En 2024, l’entreprise a exprimé le besoin de refondre complètement son site vitrine afin de moderniser son image, clarifier son offre de services,
         et générer davantage de leads qualifiés via un meilleur référencement naturel.
         <br><br>
-        Elisa a été missionnée en tant que cheffe de projet digitale pour piloter cette refonte. Elle a coordonné les besoins du client, élaboré les maquettes UX/UI,
+        j'ai été missionnée en tant que cheffe de projet digitale pour piloter cette refonte. Elle a coordonné les besoins du client, élaboré les maquettes UX/UI,
         structuré les contenus, supervisé les développements techniques, et assuré le respect des délais et des objectifs fixés.
       </p>
     </div>
