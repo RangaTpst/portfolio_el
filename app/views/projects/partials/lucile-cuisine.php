@@ -10,8 +10,8 @@
 
 <section class="project-hero" style="background: url('<?= BASE_URL ?>assets/images/projects/lucile-cuisine/lucile-hero.png') center 40% / cover no-repeat;">
   <div class="project-hero-content">
-    <h1>Lucile Cuisine</h1>
-    <p>Un projet vidéo pour valoriser les talents culinaires de Lucile dans une ambiance chaleureuse et authentique.</p>
+    <h1></h1>
+    <p></p>
   </div>
 </section>
 

@@ -5,8 +5,8 @@
 
 <section class="project-hero" style="background: url('<?= BASE_URL ?>assets/images/projects/passionfoot/passion-foot-hero.jpg') center 20% / cover no-repeat;" >
   <div class="project-hero-content">
-    <h1>Passion Foot – Refonte digitale</h1>
-    <p>Refonte du site web et développement d'une application mobile pour un média sportif indépendant.</p>
+    <h1></h1>
+    <p></p>
   </div>
 </section>
 
