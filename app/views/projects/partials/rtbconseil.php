@@ -89,7 +89,7 @@
     <div class="accordion-item">
       <button class="accordion-title">Mix marketing – 4P <span class="accordion-icon">+</span></button>
       <div class="accordion-content">
-        <p>Produit, Prix, Place, Promotion : analyse du mix marketing actuel de RTB Conseil.</p>
+        <img src="<?= BASE_URL ?>assets/images/projects/rtbconseil/mixmarket.png" alt="Mix Marketing">
       </div>
     </div>
     <div class="accordion-item">
