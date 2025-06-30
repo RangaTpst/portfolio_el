@@ -4,8 +4,6 @@
 <!-- HERO avec fond dynamique -->
 <section class="project-hero" style="background: url('<?= BASE_URL ?>assets/images/projects/uniq-and-co/uniq-and-co-hero.jpg') center 20% / cover no-repeat;">
   <div class="project-hero-content">
-    <h1> - UNIQ & CO – </h1>
-    <p>Stratégie de communication digitale & terrain pour une marque premium pour animaux</p>
   </div>
 </section>
 
@@ -21,14 +19,36 @@
     </div>
 
     <div class="section-box objectifs">
-      <h2>Objectifs</h2>
-      <div class="objectifs-grid">
-        <div class="objectif-card"><i class="lucide" data-lucide="users"></i><span>Augmenter la notoriété locale</span></div>
-        <div class="objectif-card"><i class="lucide" data-lucide="search-check"></i><span>Améliorer le référencement naturel (SEO)</span></div>
-        <div class="objectif-card"><i class="lucide" data-lucide="layout-template"></i><span>Moderniser l’identité visuelle</span></div>
-        <div class="objectif-card"><i class="lucide" data-lucide="handshake"></i><span>Développer les actions terrain et partenariats</span></div>
+  <h2>Objectifs SMART</h2>
+  <div class="smart-objectifs">
+
+    <div class="smart-line orange">
+      <div class="smart-num">01.</div>
+      <div class="smart-text">
+        <strong>Atteindre une moyenne de 50 commandes par mois d’ici 1 an</strong>
+        <small>Actuellement 25 commandes/mois</small>
       </div>
     </div>
+
+    <div class="smart-line blue">
+      <div class="smart-num">02.</div>
+      <div class="smart-text">
+        <strong>Atteindre 150 abonnées sur Instagram et 50 likes sur LinkedIn en 1 an</strong>
+        <small>Mesure combinée du nombre d’abonnés et d’interactions</small>
+      </div>
+    </div>
+
+    <div class="smart-line teal">
+      <div class="smart-num">03.</div>
+      <div class="smart-text">
+        <strong>Atteindre une moyenne de 20 visiteurs/jour sur le site dans l’année</strong>
+        <small>Objectif de trafic sur 12 mois</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -291,6 +311,26 @@
     <a href="<?= BASE_URL ?>assets/doc/PICHON_Elisa_rapportEntreprise_B3WSM.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" download>
       Télécharger le PDF
     </a>
+  </div>
+</section>
+
+<section class="projects-carousel-section">
+  <h2>Mes derniers projets</h2>
+
+  <div class="projects-carousel-wrapper">
+    <button class="carousel-arrow left" id="carousel-prev">&#10094;</button>
+
+    <div class="projects-carousel" id="projects-carousel">
+      <?php foreach ($projects as $project): ?>
+        <a href="<?= BASE_URL ?>projet/<?= htmlspecialchars($project['slug']) ?>" class="project-slide">
+          <img src="<?= BASE_URL ?>assets/images/projects/<?= htmlspecialchars($project['images']) ?>" alt="<?= htmlspecialchars($project['name']) ?>">
+          <span><?= htmlspecialchars($project['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+      <!-- Pas besoin de duplication car plus d’animation -->
+    </div>
+
+    <button class="carousel-arrow right" id="carousel-next">&#10095;</button>
   </div>
 </section>
 

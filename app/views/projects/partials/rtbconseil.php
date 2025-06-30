@@ -5,8 +5,8 @@
 <section class="project-hero" style="background: url('<?= BASE_URL ?>assets/images/projects/<?= $project['slug'] ?>/<?= $project['slug'] ?>-hero.jpg') center 20% / cover no-repeat;">
 
   <div class="project-hero-content">
-    <h1>RTB Conseil – Création d'identité et du site</h1>
-    <p>Gestion de projet web menée par Elisa pour la refonte du site vitrine d’une entreprise spécialisée en conseil ERP et cybersécurité.</p>
+    <h1></h1>
+    <p></p>
   </div>
 </section>
 
@@ -26,14 +26,43 @@
     </div>
 
     <div class="section-box objectifs">
-      <h2>Objectifs</h2>
-      <div class="objectifs-grid">
-        <div class="objectif-card"><i class="lucide" data-lucide="users"></i><span>Clarifier l’offre</span></div>
-        <div class="objectif-card"><i class="lucide" data-lucide="search-check"></i><span>Optimiser le SEO</span></div>
-        <div class="objectif-card"><i class="lucide" data-lucide="layout-template"></i><span>Moderniser le design</span></div>
-        <div class="objectif-card"><i class="lucide" data-lucide="handshake"></i><span>Favoriser les contacts</span></div>
+  <h2>Objectifs SMART</h2>
+  <div class="smart-objectifs">
+
+    <div class="smart-line orange">
+      <div class="smart-num">01.</div>
+      <div class="smart-text">
+        <strong>Atteindre 25 téléchargements de notre livre blanc en 2 mois</strong>
+        <small>Nombre de téléchargements en 2 mois</small>
       </div>
     </div>
+
+    <div class="smart-line blue">
+      <div class="smart-num">02.</div>
+      <div class="smart-text">
+        <strong>Atteindre un taux de conversion de 15% via LinkedIn et l’emailing</strong>
+        <small>Taux de conversion = Interactions / vues</small>
+      </div>
+    </div>
+
+    <div class="smart-line teal">
+      <div class="smart-num">03.</div>
+      <div class="smart-text">
+        <strong>Attirer 75 nouveaux visiteurs mensuels sur le site d’ici 2 mois</strong>
+        <small>Nombre de visiteurs simples / uniques</small>
+      </div>
+    </div>
+
+    <div class="smart-line orange-light">
+      <div class="smart-num">04.</div>
+      <div class="smart-text">
+        <strong>Atteindre les 50 interactions avec la presse en ligne en 2 mois</strong>
+        <small>Nombre d’interactions presse / impressions</small>
+      </div>
+    </div>
+
+  </div>
+</div>
   </div>
 </section>
 
@@ -199,6 +228,26 @@
     <a href="<?= BASE_URL ?>assets/doc/MDP-RTB CONSEIL-Dossier individuel.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" download>
       Télécharger le PDF
     </a>
+  </div>
+</section>
+
+<section class="projects-carousel-section">
+  <h2>Mes derniers projets</h2>
+
+  <div class="projects-carousel-wrapper">
+    <button class="carousel-arrow left" id="carousel-prev">&#10094;</button>
+
+    <div class="projects-carousel" id="projects-carousel">
+      <?php foreach ($projects as $project): ?>
+        <a href="<?= BASE_URL ?>projet/<?= htmlspecialchars($project['slug']) ?>" class="project-slide">
+          <img src="<?= BASE_URL ?>assets/images/projects/<?= htmlspecialchars($project['images']) ?>" alt="<?= htmlspecialchars($project['name']) ?>">
+          <span><?= htmlspecialchars($project['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+      <!-- Pas besoin de duplication car plus d’animation -->
+    </div>
+
+    <button class="carousel-arrow right" id="carousel-next">&#10095;</button>
   </div>
 </section>
 

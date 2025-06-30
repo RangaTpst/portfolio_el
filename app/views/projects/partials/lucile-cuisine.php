@@ -26,26 +26,44 @@
     </div>
 
     <div class="section-box objectifs">
-      <h2>Objectifs</h2>
-      <div class="objectifs-grid">
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="video"></i>
-          <span>Vidéo courte<br>impactante</span>
-        </div>
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="leaf"></i>
-          <span>Valorisation<br>du fait maison</span>
-        </div>
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="camera"></i>
-          <span>Ambiance<br>authentique</span>
-        </div>
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="share-2"></i>
-          <span>Diffusion<br>réseaux sociaux</span>
-        </div>
+  <h2>Objectifs SMART</h2>
+  <div class="smart-objectifs">
+
+    <div class="smart-line orange">
+      <div class="smart-num">01.</div>
+      <div class="smart-text">
+        <strong>Obtenir 300 vues sur la vidéo en 7 jours</strong>
+        <small>Améliorer la visibilité des ateliers dans la région de Nantes</small>
       </div>
     </div>
+
+    <div class="smart-line blue">
+      <div class="smart-num">02.</div>
+      <div class="smart-text">
+        <strong>Recevoir 30 likes, 5 commentaires et 5 partages en 5 jours</strong>
+        <small>Créer de l’interaction autour du contenu publié</small>
+      </div>
+    </div>
+
+    <div class="smart-line teal">
+      <div class="smart-num">03.</div>
+      <div class="smart-text">
+        <strong>Générer 3 inscriptions à un atelier via le lien en bio en 10 jours</strong>
+        <small>Conversions directes depuis Instagram</small>
+      </div>
+    </div>
+
+    <div class="smart-line orange-light">
+      <div class="smart-num">04.</div>
+      <div class="smart-text">
+        <strong>Gagner 15 abonnés sur Instagram en 7 jours</strong>
+        <small>Croissance ciblée auprès des personnes intéressées par la cuisine locale</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -87,6 +105,26 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="projects-carousel-section">
+  <h2>Mes derniers projets</h2>
+
+  <div class="projects-carousel-wrapper">
+    <button class="carousel-arrow left" id="carousel-prev">&#10094;</button>
+
+    <div class="projects-carousel" id="projects-carousel">
+      <?php foreach ($projects as $project): ?>
+        <a href="<?= BASE_URL ?>projet/<?= htmlspecialchars($project['slug']) ?>" class="project-slide">
+          <img src="<?= BASE_URL ?>assets/images/projects/<?= htmlspecialchars($project['images']) ?>" alt="<?= htmlspecialchars($project['name']) ?>">
+          <span><?= htmlspecialchars($project['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+      <!-- Pas besoin de duplication car plus d’animation -->
+    </div>
+
+    <button class="carousel-arrow right" id="carousel-next">&#10095;</button>
   </div>
 </section>
 

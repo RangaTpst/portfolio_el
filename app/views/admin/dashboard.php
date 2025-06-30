@@ -26,9 +26,18 @@ require_once __DIR__ . '/../partials/header-admin.php';
                     <?php endif; ?>
                     <br>
 
+                    <span class="small-label">Tags :</span>
+                    <?php if (!empty($project['tags'])): ?>
+                        <?= htmlspecialchars($project['tags']) ?>
+                    <?php else: ?>
+                        <em>Aucun</em>
+                    <?php endif; ?>
+                    <br>
+
                     <a href="<?= BASE_URL ?>admin/edit-project/<?= urlencode($project['slug']) ?>">Modifier</a> |
                     <a href="<?= BASE_URL ?>admin/delete-project/<?= $project['id'] ?>" onclick="return confirm('Supprimer ce projet ?')">Supprimer</a> |
-                    <a href="<?= BASE_URL ?>admin/manage-competences/<?= $project['id'] ?>">Gérer les compétences</a>
+                    <a href="<?= BASE_URL ?>admin/manage-competences/<?= $project['id'] ?>">Gérer les compétences</a> |
+                    <a href="<?= BASE_URL ?>admin/manage-tags/<?= $project['id'] ?>">Gérer les tags</a>
                 </li>
             <?php endforeach; ?>
         </ul>

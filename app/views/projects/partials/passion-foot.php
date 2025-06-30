@@ -24,26 +24,44 @@
     </div>
 
     <div class="section-box objectifs">
-      <h2>Objectifs</h2>
-      <div class="objectifs-grid">
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="link"></i>
-          <span>Coordination des équipes</span>
-        </div>
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="brain-cog"></i>
-          <span>réflexion stratégique</span>
-        </div>
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="notebook-text"></i>
-          <span>réponse à l'appel d'offre</span>
-        </div>
-        <div class="objectif-card">
-          <i class="lucide" data-lucide="smile"></i>
-          <span>Ergonomie<br>UX/UI</span>
-        </div>
+  <h2>Objectifs SMART</h2>
+  <div class="smart-objectifs">
+
+    <div class="smart-line orange">
+      <div class="smart-num">01.</div>
+      <div class="smart-text">
+        <strong>Augmenter de 50 % les mentions/partages de Passion Foot en 2 mois</strong>
+        <small>Sur les réseaux sociaux après le lancement du site et de l’appli</small>
       </div>
     </div>
+
+    <div class="smart-line blue">
+      <div class="smart-num">02.</div>
+      <div class="smart-text">
+        <strong>Multiplier par 2 les demandes de contact pro en 4 mois</strong>
+        <small>Via le nouveau site et l’application Passion Foot</small>
+      </div>
+    </div>
+
+    <div class="smart-line teal">
+      <div class="smart-num">03.</div>
+      <div class="smart-text">
+        <strong>Atteindre un taux de rétention de 30 % sur l’application</strong>
+        <small>Dans le mois suivant son lancement</small>
+      </div>
+    </div>
+
+    <div class="smart-line orange-light">
+      <div class="smart-num">04.</div>
+      <div class="smart-text">
+        <strong>Augmenter de 40 % les visiteurs mensuels du site web en 3 mois</strong>
+        <small>Suite à la refonte complète du site Passion Foot</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -247,6 +265,24 @@
   </div>
 </section>
 
+<section class="projects-carousel-section">
+  <h2>Mes derniers projets</h2>
 
+  <div class="projects-carousel-wrapper">
+    <button class="carousel-arrow left" id="carousel-prev">&#10094;</button>
+
+    <div class="projects-carousel" id="projects-carousel">
+      <?php foreach ($projects as $project): ?>
+        <a href="<?= BASE_URL ?>projet/<?= htmlspecialchars($project['slug']) ?>" class="project-slide">
+          <img src="<?= BASE_URL ?>assets/images/projects/<?= htmlspecialchars($project['images']) ?>" alt="<?= htmlspecialchars($project['name']) ?>">
+          <span><?= htmlspecialchars($project['name']) ?></span>
+        </a>
+      <?php endforeach; ?>
+      <!-- Pas besoin de duplication car plus d’animation -->
+    </div>
+
+    <button class="carousel-arrow right" id="carousel-next">&#10095;</button>
+  </div>
+</section>
 
 <script src="<?= BASE_URL ?>assets/js/main.js"></script>

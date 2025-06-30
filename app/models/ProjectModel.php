@@ -23,9 +23,6 @@ class ProjectModel
         );
     }
 
-    /**
-     * Récupère tous les projets avec leurs tags et compétences
-     */
     public function getAll(): array
     {
         $sql = "
@@ -50,9 +47,6 @@ class ProjectModel
         return $this->pdo->query($sql)->fetchAll();
     }
 
-    /**
-     * Récupère toutes les compétences (ex: pour affichage sur la page d’accueil)
-     */
     public function getAllCompetences(): array
     {
         return $this->pdo
@@ -60,9 +54,13 @@ class ProjectModel
             ->fetchAll();
     }
 
-    /**
-     * Récupère un projet par son slug
-     */
+    public function getAllTags(): array
+    {
+        return $this->pdo
+            ->query("SELECT id, name FROM tags ORDER BY name")
+            ->fetchAll();
+    }
+
     public function getBySlug(string $slug): ?array
     {
         $stmt = $this->pdo->prepare("SELECT * FROM projects WHERE slug = ?");
@@ -70,9 +68,6 @@ class ProjectModel
         return $stmt->fetch() ?: null;
     }
 
-    /**
-     * Récupère un projet par son ID
-     */
     public function getById(int $id): ?array
     {
         $stmt = $this->pdo->prepare("SELECT * FROM projects WHERE id = ?");
@@ -80,9 +75,6 @@ class ProjectModel
         return $stmt->fetch() ?: null;
     }
 
-    /**
-     * Récupère les compétences associées à un projet
-     */
     public function getCompetencesForProject(int $projectId): array
     {
         $stmt = $this->pdo->prepare("
@@ -95,9 +87,6 @@ class ProjectModel
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
-    /**
-     * Récupère les tags associés à un projet
-     */
     public function getTagsForProject(int $projectId): array
     {
         $stmt = $this->pdo->prepare("
@@ -110,9 +99,6 @@ class ProjectModel
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
-    /**
-     * Crée un nouveau projet
-     */
     public function create(array $data): bool
     {
         $stmt = $this->pdo->prepare("
@@ -128,9 +114,6 @@ class ProjectModel
         ]);
     }
 
-    /**
-     * Met à jour un projet existant
-     */
     public function update(int $id, array $data): bool
     {
         $stmt = $this->pdo->prepare("
@@ -148,18 +131,12 @@ class ProjectModel
         ]);
     }
 
-    /**
-     * Supprime un projet
-     */
     public function delete(int $id): bool
     {
         $stmt = $this->pdo->prepare("DELETE FROM projects WHERE id = ?");
         return $stmt->execute([$id]);
     }
 
-    /**
-     * Récupère une compétence via son slug
-     */
     public function getCompetenceBySlug(string $slug): ?array
     {
         $stmt = $this->pdo->prepare("SELECT id, name FROM competences WHERE slug = ?");
@@ -167,9 +144,13 @@ class ProjectModel
         return $stmt->fetch() ?: null;
     }
 
-    /**
-     * Récupère tous les projets associés à une compétence (par slug)
-     */
+    public function getTagBySlug(string $slug): ?array
+    {
+        $stmt = $this->pdo->prepare("SELECT id, name FROM tags WHERE slug = ?");
+        $stmt->execute([$slug]);
+        return $stmt->fetch() ?: null;
+    }
+
     public function getProjectsByCompetence(string $slug): array
     {
         $stmt = $this->pdo->prepare("
@@ -182,35 +163,49 @@ class ProjectModel
         return $stmt->fetchAll();
     }
 
-    /**
- * Récupère les IDs des compétences associées à un projet (utile pour les checkbox)
- */
-public function getCompetenceIdsForProject(int $projectId): array
-{
-    $stmt = $this->pdo->prepare("
-        SELECT competence_id
-        FROM project_competences
-        WHERE project_id = ?
-    ");
-    $stmt->execute([$projectId]);
-    return $stmt->fetchAll(PDO::FETCH_COLUMN);
-}
-
-/**
- * Met à jour les compétences associées à un projet
- */
-public function updateCompetences(int $projectId, array $competenceIds): void
-{
-    // Supprimer les associations existantes
-    $stmt = $this->pdo->prepare("DELETE FROM project_competences WHERE project_id = ?");
-    $stmt->execute([$projectId]);
-
-    // Ajouter les nouvelles associations
-    $stmt = $this->pdo->prepare("INSERT INTO project_competences (project_id, competence_id) VALUES (?, ?)");
-
-    foreach ($competenceIds as $competenceId) {
-        $stmt->execute([$projectId, $competenceId]);
+    public function getCompetenceIdsForProject(int $projectId): array
+    {
+        $stmt = $this->pdo->prepare("
+            SELECT competence_id
+            FROM project_competences
+            WHERE project_id = ?
+        ");
+        $stmt->execute([$projectId]);
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
-}
 
+    public function getTagIdsForProject(int $projectId): array
+    {
+        $stmt = $this->pdo->prepare("
+            SELECT tag_id
+            FROM project_tags
+            WHERE project_id = ?
+        ");
+        $stmt->execute([$projectId]);
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    }
+
+    public function updateCompetences(int $projectId, array $competenceIds): void
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM project_competences WHERE project_id = ?");
+        $stmt->execute([$projectId]);
+
+        $stmt = $this->pdo->prepare("INSERT INTO project_competences (project_id, competence_id) VALUES (?, ?)");
+
+        foreach ($competenceIds as $competenceId) {
+            $stmt->execute([$projectId, $competenceId]);
+        }
+    }
+
+    public function updateTags(int $projectId, array $tagIds): void
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM project_tags WHERE project_id = ?");
+        $stmt->execute([$projectId]);
+
+        $stmt = $this->pdo->prepare("INSERT INTO project_tags (project_id, tag_id) VALUES (?, ?)");
+
+        foreach ($tagIds as $tagId) {
+            $stmt->execute([$projectId, $tagId]);
+        }
+    }
 }

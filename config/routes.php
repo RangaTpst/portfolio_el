@@ -96,6 +96,15 @@ $router->get('/admin/delete-project/{id}', function ($id) {
     (new AdminController())->delete($id);
 });
 
+// Gérer les tags associés à un projet
+$router->get('/admin/manage-tags/{id}', function ($id) {
+    (new AdminController())->showManageTags($id);
+});
+
+$router->post('/admin/manage-tags/{id}', function ($id) {
+    (new AdminController())->handleManageTags($id);
+});
+
 // page a_propo
 $router->get('/about', function () {
     (new \App\Controllers\HomeController())->about();
