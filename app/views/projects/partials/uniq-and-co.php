@@ -280,28 +280,6 @@
   </div>
 </section>
 
-<!-- ACCORDÉON 4 : Objectifs -->
-<section class="accordion-section">
-  <h2>Objectifs</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-  <button class="accordion-title">Objectif général <span class="accordion-icon">+</span></button>
-  <div class="accordion-content objectifs-list">
-    <div class="objectif">
-      <h3 class="cyan">Augmenter le nombre de commandes passées</h3>
-      <p>Doubler le nombre de commandes passées sur notre site d’ici un an. Nous en sommes à une moyenne de 25 commandes par mois, donc notre objectif est de 50 commandes par mois d’ici un an.</p>
-    </div>
-    <div class="objectif">
-      <h3 class="cyan">Augmenter l'engagement social</h3>
-      <p>Atteindre les 150 abonnés Instagram et une cinquantaine de likes sur nos posts LinkedIn d’ici un an.</p>
-    </div>
-    <div class="objectif">
-      <h3 class="cyan">Augmenter notre trafic sur le site</h3>
-      <p>Nous souhaitons atteindre une vingtaine de visiteurs par jour sur notre site internet d’ici un an.</p>
-    </div>
-  </div>
-</div>
-</section>
 
 
 <section class="en-savoir-plus">

@@ -16,11 +16,11 @@
     <div class="section-box contexte">
       <h2>Contexte</h2>
       <p>
-        RTB Conseil est une entreprise de conseil spécialisée dans les systèmes ERP, notamment SAP, ainsi que dans la cybersécurité.
-        En 2024, l’entreprise a exprimé le besoin de refondre complètement son site vitrine afin de moderniser son image, clarifier son offre de services,
-        et générer davantage de leads qualifiés via un meilleur référencement naturel.
+        RTB Conseil est une entreprise de conseil spécialisée dans les systèmes ERP, notamment SAP.
+        En 2024, l’entreprise a exprimé le besoin de créer un site vitrine afin de moderniser son image, clarifier son offre de services,
+        et générer davantage de leads qualifiés via un référencement naturel.
         <br><br>
-        j'ai été missionnée en tant que cheffe de projet digitale pour piloter cette refonte. Elle a coordonné les besoins du client, élaboré les maquettes UX/UI,
+        j'ai été missionnée en tant que cheffe de projet digitale pour piloter cette création, coordonné les besoins du client, élaboré les maquettes UX/UI,
         structuré les contenus, supervisé les développements techniques, et assuré le respect des délais et des objectifs fixés.
       </p>
     </div>
@@ -105,12 +105,6 @@
 <section class="accordion-section">
   <h2>Étude de marché</h2>
   <div class="accordion">
-    <div class="accordion-item">
-      <button class="accordion-title">Positionnement <span class="accordion-icon">+</span></button>
-      <div class="accordion-content">
-        <p>Positionnement de RTB Conseil par rapport à ses concurrents sur les services ERP et cybersécurité.</p>
-      </div>
-    </div>
     <div class="accordion-item">
   <button class="accordion-title">Concurrents <span class="accordion-icon">+</span></button>
   <div class="accordion-content">
@@ -200,26 +194,6 @@
   </div>
 </section>
 
-<!-- ACCORDÉON 4 : Objectifs -->
-<section class="accordion-section">
-  <h2>Objectifs</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-      <button class="accordion-title">Objectif général <span class="accordion-icon">+</span></button>
-      <div class="accordion-content">
-        <img src="<?= BASE_URL ?>assets/images/projects/rtbconseil/objectif_rtb.png" alt="objectifs">
-    </div>
-    <div class="accordion-item">
-      <button class="accordion-title">Leviers & KPI <span class="accordion-icon">+</span></button>
-      <div class="accordion-content">
-        <p>
-          Leviers : SEO, ergonomie, contenus ciblés, CTA efficaces.<br>
-          KPI : taux de rebond, durée de session, nombre de formulaires remplis, trafic organique.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="en-savoir-plus">
   <div class="en-savoir-container">

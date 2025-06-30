@@ -695,18 +695,18 @@ footer {
 }
 
 /* Couleurs des lignes */
-.orange {
-  background-color: #f7931e;
+.orange .smart-num{
+  color:#ff5722;
 }
 
-.blue {
-  background-color: #0071bc;
+.blue .smart-num{
+  color:#00e5c1;
 }
 
-.teal {
-  background-color: #009688;
+.teal .smart-num{
+  color:#ffc107;
 }
 
-.orange-light {
-  background-color: #faaa3c;
+.orange-light .smart-num{
+  color:#2196f3;
 }
