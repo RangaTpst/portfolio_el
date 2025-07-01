@@ -65,6 +65,12 @@ error_reporting(E_ALL);?>
             Je souhaite recevoir votre CV
           </label>
         </div>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="privacy_policy" id="privacy_policy" required>
+              Je confirme avoir pris connaissance de la <a href="<?= BASE_URL ?>mentions-legales" target="_blank">politique de confidentialité</a>.
+          </label>
+        </div>
 
         <button type="submit" class="contact-btn">Envoyer</button>
       </form>
