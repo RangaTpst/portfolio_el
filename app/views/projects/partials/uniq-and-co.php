@@ -324,7 +324,7 @@
 </section>
 <section class="accordion-section">
     <div class="accordion-item">
-      <button class="accordion-title">bilan <span class="accordion-icon">+</span></button>
+      <button class="accordion-title">Bilan de l'année écoulée <span class="accordion-icon">+</span></button>
       <div class="accordion-content">
         <img src="<?= BASE_URL ?>assets/images/projects/uniq-and-co/bilan.png" alt="Benchmark UNIQ & Co" />
       </div>
