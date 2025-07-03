@@ -710,3 +710,6 @@ footer {
 .smart-line.orange-light {
   background-color: #faaa3c;
 }
+ul{
+  list-style: none;
+}
