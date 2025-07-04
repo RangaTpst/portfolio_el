@@ -39,11 +39,11 @@
     <div class="smart-line teal">
       <div class="smart-num">03.</div>
       <div class="smart-text">
-        <strong>Dévelloper son réseau de partenaires</strong>
+        <strong>Développer son réseau de partenaires</strong>
       </div>
     </div>
     <div class="smart-line orange">
-      <div class="smart-num">03.</div>
+      <div class="smart-num">04.</div>
       <div class="smart-text">
         <strong>Fidéliser la clientèle existante</strong>
       </div>
